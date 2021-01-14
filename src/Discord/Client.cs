@@ -11,18 +11,20 @@ namespace Aya.Discord
         private readonly IConfigProvider _config;
         private readonly DiscordSocketClient _client;
         private readonly ICommandHandler _commands;
+        private readonly DiscordPolls _polls;
 
-        public Client(IConfigProvider configProvider, DiscordSocketClient client, ICommandHandler commands)
+        public Client(IConfigProvider configProvider, DiscordSocketClient client, ICommandHandler commands, DiscordPolls polls)
         {
             _config = configProvider;
             _client = client;
             _commands = commands;
+            _polls = polls;
         }
 
         public async Task StartAsync()
         {
             var config = _config.ReadConfig();
-            if (config != null && config.IsInitialized)
+            if (config == null || !config.IsInitialized)
             {
                 await Log("Please add your bot token to the config.json file");
                 return;
@@ -32,6 +34,7 @@ namespace Aya.Discord
             await _client.LoginAsync(TokenType.Bot, _config.ReadConfig().Token);
             await _client.StartAsync();
             await _commands.InitializeAsync();
+            _polls.Initialize();
             await Task.Delay(-1);
         }
 
