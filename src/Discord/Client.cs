@@ -11,14 +11,12 @@ namespace Aya.Discord
         private readonly IConfigProvider _config;
         private readonly DiscordSocketClient _client;
         private readonly ICommandHandler _commands;
-        private readonly DiscordPolls _polls;
 
-        public Client(IConfigProvider configProvider, DiscordSocketClient client, ICommandHandler commands, DiscordPolls polls)
+        public Client(IConfigProvider configProvider, DiscordSocketClient client, ICommandHandler commands)
         {
             _config = configProvider;
             _client = client;
             _commands = commands;
-            _polls = polls;
         }
 
         public async Task StartAsync()
@@ -34,7 +32,6 @@ namespace Aya.Discord
             await _client.LoginAsync(TokenType.Bot, _config.ReadConfig().Token);
             await _client.StartAsync();
             await _commands.InitializeAsync();
-            _polls.Initialize();
             await Task.Delay(-1);
         }
 

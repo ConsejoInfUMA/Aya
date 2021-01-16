@@ -4,7 +4,7 @@ namespace Aya.Polls
     {
         public ulong Id { get; set; }
         public Candidate Candidate { get; set; }
-        public uint Points { get; set; } = 0;
+        public int Value { get; set; } = 0;
     }
 }
 

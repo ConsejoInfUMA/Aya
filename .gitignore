@@ -1,3 +1,4 @@
-config.json
+config.**
+storage/*
 obj/*
 bin/*

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Aya.Storage;
@@ -9,20 +10,15 @@ namespace Aya.Polls
         private Poll _activePoll;
         private IStorage<Poll> _polls;
 
+        public Poll ActivePoll => _activePoll;
+
+        public event IPollService.OnPollUpdatedDelegate OnPollUpdated;
+        public event IPollService.OnPollUpdatedDelegate OnPollStateUpdated;
+
         public PollService(IStorage<Poll> polls)
         {
             _polls = polls;
             // TODO: load poll and check if there is an active poll
-        }
-
-        public void OnPollUpdated(Poll poll)
-        {
-            // TODO: create event
-        }
-
-        public void GetStatus()
-        {
-            throw new System.NotImplementedException();
         }
 
         public Poll StartPoll(string title, ulong messageId, ulong id, IEnumerable<ulong> voters)
@@ -35,8 +31,17 @@ namespace Aya.Polls
             };
 
             _activePoll = poll;
-            _polls.Save(poll.Id, poll);
+
+            PollUpdated(poll);
+
             return _activePoll;
+        }
+
+        public void StartVoting()
+        {
+            RequireActivePoll();
+            RequireState(PollState.Registering);
+            PollUpdated(_activePoll);
         }
 
         public bool TryGetActivePoll(out Poll poll)
@@ -51,40 +56,107 @@ namespace Aya.Polls
             return true;
         }
 
+        public void AddCandidate(ulong id, string name)
+        {
+            RequireState(PollState.Registering);
+            _activePoll.Candidates.Add(new Candidate { Id = id, Name = name });
+            PollUpdated(_activePoll);
+        }
+
+        private void PollUpdated(Poll poll, bool save = true)
+        {
+            if (_activePoll != null && save)
+            {
+                _polls.Save(_activePoll.Id, _activePoll);
+            }
+
+            OnPollUpdated?.Invoke(poll);
+        }
+
         public void NextState()
         {
+            RequireActivePoll();
             _activePoll.State = _activePoll.State switch
             {
                 PollState.Waiting => PollState.Registering,
-                PollState.Registering => PollState.Voting,
-                PollState.Voting => PollState.Finished,
+                PollState.Registering => PollState.SendingMessages,
+                PollState.SendingMessages => PollState.Voting,
+                PollState.Voting => PollState.ProcessingResults,
+                PollState.ProcessingResults => PollState.Finished,
                 PollState.Finished => PollState.Finished,
                 _ => PollState.Waiting
             };
+
+            OnPollStateUpdated?.Invoke(_activePoll);
+            PollUpdated(_activePoll);
         }
 
-        public void ChangeMessageId(ulong id)
+        private void RequireActivePoll()
         {
-            if (TryGetActivePoll(out Poll poll))
+            if (_activePoll == null)
             {
-                poll.MessageId = id;
+                throw new Exception("Active poll required");
             }
         }
 
-        public void ShowResults()
+        private void RequireState(PollState state)
         {
-            throw new System.NotImplementedException();
+            if (_activePoll.State != state)
+            {
+                throw new Exception($"State assertion failed. {state} state required. Current state: {_activePoll.State}");
+            }
         }
 
-        public void AddCandidate(ulong id, string name)
+        public void SendVote(List<Vote> votes, ulong usrId)
         {
-            if (_activePoll.State != PollState.Registering)
+            RequireActivePoll();
+
+            var voted = _activePoll.Voters[usrId];
+            if (voted)
             {
                 return;
             }
+            // Ensure votes has different values
+            var comparer = new VoteValueComparer();
+            var distinct = votes.Distinct(comparer);
 
-            _activePoll.Candidates.Add(new Candidate { Id = id, Name = name });
+            foreach (var vote in distinct)
+            {
+                _activePoll.Votes.Add(vote);
+            }
+
+            _activePoll.Voters[usrId] = true;
+            PollUpdated(_activePoll, false);
         }
+
+        public bool TryGetCandidate(ulong id, out Candidate candidate)
+        {
+            RequireActivePoll();
+            candidate = _activePoll.Candidates.FirstOrDefault(c => c.Id == id);
+            if (candidate == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool RemoveCandidate(ulong id)
+        {
+            if (TryGetCandidate(id, out var candidate))
+            {
+                if (_activePoll.Candidates.Remove(candidate))
+                {
+                    PollUpdated(_activePoll);
+                    return true;
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
     }
 }
 
