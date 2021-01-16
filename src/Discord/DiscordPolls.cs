@@ -316,7 +316,7 @@ namespace Aya.Discord
 
                 _polls.AddCandidate(usr.Id, name);
             }
-            else if (reaction.Emote.Name == Constants.NextEmoji.Name && usr.RoleIds.Contains(Constants.ModRole))
+            else if (reaction.Emote.Name == Constants.NextEmoji.Name && _polls.ActivePoll.State != PollState.SendingMessages && usr.RoleIds.Contains(Constants.ModRole))
             {
                 _polls.NextState();
             }
