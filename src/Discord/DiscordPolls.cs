@@ -55,9 +55,13 @@ namespace Aya.Discord
                 var formatted = String.Join("\n", res.Select(v => $"{v.Value} puntos para {v.Candidate.Name}"));
                 if (String.IsNullOrEmpty(formatted))
                 {
-                    formatted = "Invalid input";
+                    formatted = "No te entiendo. Si reaccionas, tu voto no será válido.";
+                    await dmChannel.SendMessageAsync(formatted);
+                    return;
                 }
-                await dmChannel.SendMessageAsync(formatted);
+                var m = "Esto es lo que he entendido:\n";
+                var f = "\nReacciona a tu propio mensaje con ✅ para guardar el voto. No podrás cambiarlo una vez guardado.";
+                await dmChannel.SendMessageAsync(m + formatted + f);
             }
         }
 
@@ -123,7 +127,7 @@ namespace Aya.Discord
         {
             var candidates = String.Join("\n", poll.Candidates.Select(c => $"{c.Id} - {c.Name}"));
             var message = $"**{poll.Title}**\n" +
-                $"Para votar, deberás escribir una lista separada por comas indicando el identificador de cada candidato. \n**Candidatos:**\n{candidates}";
+                $"Para votar, deberás escribir una lista separada por comas indicando el identificador de cada candidato.\nLos puntos asaignados a cada candidato depende de la posición en la que lo escribas, siendo el primero el que obtiene la mayor puntuación (15) y el último el que menos (1).\nUna vez envies tu mensaje, reaccionaré a él con el icono ✅ y te responderé con lo que he entendido.\nSi reaccionas al icono mencionado, se guardará el voto y no se podrá cancelar.\nPuedes enviar tantos mensajes como quieras.\nSi deseas que tu voto no cuente, basta con responderme cualquier cosa y guardar tu voto. \n**Candidatos:**\n{candidates}";
 
             foreach (var voter in poll.Voters)
             {
@@ -287,7 +291,7 @@ namespace Aya.Discord
             {
                 var result = ProcessVote(msg.Content);
                 _polls.SendVote(result, usrId);
-                dmChannel.SendMessageAsync("Voto guardado");
+                dmChannel.SendMessageAsync("Voto guardado correctamente.");
             }
         }
 
