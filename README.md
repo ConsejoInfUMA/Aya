@@ -17,6 +17,7 @@ El token se puede encontrar en la página para desarrolladores de Discord.
 
 ## Roles
 El bot solo responderá a los usuarios con ciertos roles, explicados a continuación.
+Actualmente se pueden modificar los roles en el archivo `Constants.cs`.
 
 ### ModRol
 Puede iniciar la votación con el comando `newpoll título`
