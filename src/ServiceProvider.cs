@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Aya.Discord;
 using Aya.Config;
 using Aya.Polls;
+using Aya.Logger;
 
 namespace Aya
 {
@@ -11,6 +12,7 @@ namespace Aya
            new ServiceCollection()
            .AddDiscord()
            .AddPoll()
+           .AddSingleton<ILogger, ConsoleLogger>()
            .AddSingleton<IConfigProvider, ConfigProvider>()
            .BuildServiceProvider();
     }
