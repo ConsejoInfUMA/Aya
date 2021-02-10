@@ -9,15 +9,20 @@
 
 <h4 align="center">Discord bot developed <a href="https://www.uma.es/etsi-informatica/info/126304/consejo-de-estudiantes/" target="_blank">Consejo de Informática de la UMA</a>.</h4>
 
-
+<p align="center">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/GDUMA/Aya">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/GDUMA/Aya">
+  <img alt="GitHub" src="https://img.shields.io/github/license/GDUMA/Aya">
+  
+</p>
 
 <p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
+  <a href="#características">Características</a> •
+  <a href="#instalación">Instalación</a> •
+  <a href="#configuración">Configuración</a> •
+  <a href="#estados">Estados</a> •
+  <a href="#roles">Roles</a> •
+  <a href="#licencia">Licencia</a>
 </p>
 
 
@@ -89,5 +94,3 @@ Tal y como se indica en dicho mensaje, el voto solo se guarda cuando se reaccion
 
 ## Licencia
 [MIT](LICENSE)
-
----
