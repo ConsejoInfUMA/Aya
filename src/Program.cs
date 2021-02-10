@@ -19,7 +19,6 @@ namespace Aya
                 var client = services.GetRequiredService<IClient>();
                 await client.StartAsync();
             }
-
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Aya.Config
         {
             if (!File.Exists(_file))
             {
-                var json = JsonConvert.SerializeObject(new BotConfig());
+                var json = JsonConvert.SerializeObject(new BotConfig(), Formatting.Indented);
                 File.WriteAllText(_file, json);
                 return null;
             }
