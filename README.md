@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">Discord bot developed <a href="https://www.uma.es/etsi-informatica/info/126304/consejo-de-estudiantes/" target="_blank">Consejo de Informática de la UMA</a>.</h4>
+<h4 align="center">Bot de Discord desarrollado para las votaciones de Junta del <a href="https://www.uma.es/etsi-informatica/info/126304/consejo-de-estudiantes/" target="_blank">Consejo de Informática de la UMA</a>.</h4>
 
 <p align="center">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/GDUMA/Aya">
