@@ -104,16 +104,16 @@ namespace Aya.Discord
             if (poll.State == PollState.Registering)
             {
                 _message.AddReactionAsync(Constants.JoinEmoji);
+                _client.ReactionRemoved += OnReactionRemoved;
             }
             else if (poll.State == PollState.SendingMessages)
             {
+                _client.ReactionRemoved -= OnReactionRemoved;
                 _client.MessageReceived += OnMessageReceived;
-                _client.ReactionRemoved += OnReactionRemoved;
                 _ = SendMessages(poll);
             }
             else if (poll.State == PollState.Voting)
             {
-                _client.ReactionRemoved -= OnReactionRemoved;
             }
             else if (poll.State == PollState.Finished)
             {

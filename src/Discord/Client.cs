@@ -22,7 +22,7 @@ namespace Aya.Discord
         public async Task StartAsync()
         {
             var config = _config.ReadConfig();
-            if (config == null || !config.IsInitialized)
+            if (config == null || !config.IsInitialized())
             {
                 await Log("Please add your bot token to the config.json file");
                 return;
@@ -33,11 +33,6 @@ namespace Aya.Discord
             await _client.StartAsync();
             await _commands.InitializeAsync();
             await Task.Delay(-1);
-        }
-
-        private bool IsConfigValid(BotConfig config)
-        {
-            return config is null || String.IsNullOrEmpty(config.Token) || config.Token == "your-token";
         }
 
         private Task Log(string msg)
