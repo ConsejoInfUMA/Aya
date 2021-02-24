@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">Bot de Discord desarrollado para las votaciones de Junta del <a href="https://www.uma.es/etsi-informatica/info/126304/consejo-de-estudiantes/" target="_blank">Consejo de Informática de la UMA</a>.</h4>
+<h4 align="center">Bot de Discord desarrollado para las votaciones de Junta del <a href="https://www.uma.es/etsi-informatica/info/126304/consejo-de-estudiantes/" target="_blank">Consejo de Informática de la UMA</a> utilizando <a href="https://github.com/discord-net/Discord.Net">Discord.Net</a>.</h4>
 
 <p align="center">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/GDUMA/Aya">
@@ -56,6 +56,8 @@ dotnet run
 ```
 
 > También es posible ejecutar el bot desde tu IDE si este soporta el desarrollo en .NET
+
+Para generar un ejecutable recomendamos seguir [la documentación de .NET Core](https://docs.microsoft.com/es-es/dotnet/core/deploying/deploy-with-cli) donde vienen explicadas las distintas formas de hacerlo.
 
 ## Configuración
 En la primera ejecución se creará el archivo `config.json`, donde habrá que modificar el token del bot. 
