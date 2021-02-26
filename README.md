@@ -26,7 +26,7 @@
 </p>
 
 
-## Características
+## Features
 
 * Permite votar a hasta 15 candidatos, asignándole a cada uno una puntuación única del 1 al 15.
 * Rol de administrador
@@ -94,5 +94,5 @@ Cuando se pasa al siguiente estado, _SendingMessages_, recibirá las instruccion
 Tal y como se indica en dicho mensaje, el voto solo se guarda cuando se reacciona con ✅.
 ![voter message](img/votacion.png)
 
-## Licencia
+## License
 [MIT](LICENSE)
