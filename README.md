@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">Bot de Discord desarrollado para las votaciones de Junta del <a href="https://www.uma.es/etsi-informatica/info/126304/consejo-de-estudiantes/" target="_blank">Consejo de Informática de la UMA</a> utilizando <a href="https://github.com/discord-net/Discord.Net">Discord.Net</a>.</h4>
+<h4 align="center">Discord bot developed for Board voting of the <a href="https://www.uma.es/etsi-informatica/info/126304/consejo-de-estudiantes/" target="_blank">Consejo de Informática of UMA</a> using <a href="https://github.com/discord-net/Discord.Net">Discord.Net</a>.</h4>
 
 <p align="center">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/GDUMA/Aya">
@@ -17,12 +17,12 @@
 </p>
 
 <p align="center">
-  <a href="#características">Características</a> •
-  <a href="#instalación">Instalación</a> •
-  <a href="#configuración">Configuración</a> •
-  <a href="#estados">Estados</a> •
+  <a href="#características">Features</a> •
+  <a href="#instalación">Installation</a> •
+  <a href="#configuración">Configuration</a> •
+  <a href="#estados">States</a> •
   <a href="#roles">Roles</a> •
-  <a href="#licencia">Licencia</a>
+  <a href="#licencia">License</a>
 </p>
 
 
