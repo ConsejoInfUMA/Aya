@@ -22,7 +22,7 @@
   <a href="#configuration">Configuration</a> •
   <a href="#states">States</a> •
   <a href="#roles">Roles</a> •
-  <a href="#license">License</a>
+  <a href="#license">License</a> •
   <a href="#documentation">Documentation</a>
 </p>
 
