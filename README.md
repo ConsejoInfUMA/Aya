@@ -23,6 +23,7 @@
   <a href="#states">States</a> •
   <a href="#roles">Roles</a> •
   <a href="#license">License</a>
+  <a href="#documentation">Documentation</a>
 </p>
 
 
@@ -97,4 +98,5 @@ As indicated in this message, the vote is only saved when you react with ✅.
 ## License
 [MIT](LICENSE)
 
-[Documentation in spanish](README-ES.md)
+## Documentation
+[Spanish version](README-ES.md)
