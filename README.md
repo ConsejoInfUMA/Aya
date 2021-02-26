@@ -17,12 +17,12 @@
 </p>
 
 <p align="center">
-  <a href="#características">Features</a> •
-  <a href="#instalación">Installation</a> •
-  <a href="#configuración">Configuration</a> •
-  <a href="#estados">States</a> •
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#configuration">Configuration</a> •
+  <a href="#states">States</a> •
   <a href="#roles">Roles</a> •
-  <a href="#licencia">License</a>
+  <a href="#license">License</a>
 </p>
 
 
