@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">Discord bot developed for Board voting of the <a href="https://www.uma.es/etsi-informatica/info/126304/consejo-de-estudiantes/" target="_blank">Consejo de Informática of UMA</a> using <a href="https://github.com/discord-net/Discord.Net">Discord.Net</a>.</h4>
+<h4 align="center">Discord bot developed for Board voting of the <a href="https://www.uma.es/etsi-informatica/info/126304/consejo-de-estudiantes/" target="_blank">Consejo de Informática de UMA</a> using <a href="https://github.com/discord-net/Discord.Net">Discord.Net</a>.</h4>
 
 <p align="center">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/GDUMA/Aya">
@@ -28,70 +28,70 @@
 
 ## Features
 
-* Permite votar a hasta 15 candidatos, asignándole a cada uno una puntuación única del 1 al 15.
-* Rol de administrador
-  - Encargado de manejar la votación
-* Rol de votante
-  - Podrán presentarse a candidato y votar
-* Multiplataforma
-  - Windows, macOS y Linux.
+* Allows voting for up to 15 candidates, assigning each one a unique score from 1 to 15.
+* Administrator role
+  - In charge of handling the voting
+* Voter role
+  - They may stand as a candidate and vote
+* Multi platform
+  - Windows, macOS and Linux.
 
 ## Installation
 
-Para clonar y ejecutar el bot necesitarás [Git](https://git-scm.com) y [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/install/windows?tabs=netcore31) instalado.
+To clone and run the bot you will need [Git](https://git-scm.com) and [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/install/windows?tabs=netcore31) instalado.
 
-Puedes hacerlo ejecutando los siguientes comandos en un terminal:
+You can do it by running the following commands in a terminal:
 ```sh
-# Clona este repositorio
+# Clone this repository
 git clone https://github.com/GDUMA/Aya
 
-# Ve a la carpeta del proyecto
+# Go to the project folder
 cd Aya
 
-# Instala las dependencias
+# Install dependencies
 dotnet restore
 
-# Ejecuta el bot
+# Run the bot
 dotnet run
 ```
 
-> También es posible ejecutar el bot desde tu IDE si este soporta el desarrollo en .NET
+> It is also possible to run the bot from your IDE if it supports development in .NET
 
-Para generar un ejecutable recomendamos seguir [la documentación de .NET Core](https://docs.microsoft.com/es-es/dotnet/core/deploying/deploy-with-cli) donde vienen explicadas las distintas formas de hacerlo.
+To generate an executable we recommend following [.NET Core documentation](https://docs.microsoft.com/es-es/dotnet/core/deploying/deploy-with-cli) where the different ways of doing it are explained.
 
 ## Configuration
-En la primera ejecución se creará el archivo `config.json`, donde habrá que modificar el token del bot. 
+In the first run, the `config.json` file will be created, where the bot's token will have to be modified.
 
-Este es el contenido por defecto:
+This is the default content:
 
 ```json
 {
   "Token": "your-token"
 }
 ```
-Para obtener tu token deberás primero tener una aplicación de Discord, la cual se puede crear en el [portal para desarrolladores de Discord](https://discord.com/developers/). El token se encuentra en el apartado _Bot_ dentro de la configuración de la aplicación.
+To obtain your token you must first have a Discord application, which can be created in the [Discord developer portal](https://discord.com/developers/). The token is found in the _Bot_ section within the application configuration.
 
 ## States
-La votación dispone de varios estados definidos que permiten o no la ejecución de ciertas acciones por parte de los usuarios. La mayoría de los estados pueden ser controlados por el moderador:
+The voting has several defined statuses that allow or not the execution of certain actions by the users. Most statuses can be controlled by the moderator:
 
-- **Waiting**: La votación se acaba de crear, únicamente muestra el título y una descripción. A la espera del moderador para comenzar.
-- **Registering**: Los miembros con el rol de _votante_ pueden presentarse a candidato reaccionando con 📝. Pueden cancelar si borran la reacción. Espera al moderador para avanzar de estado.
-- **SendingMessages**: El bot comienza a enviar mensajes privados a todos los _votantes_ con un intervalo de 0.8 segundos. Al mismo tiempo el bot comenzará a leer los mensajes privados por si alguien comienza a votar. Avanzará al siguiente estado automáticamente una vez enviados los mensajes.
-- **Voting**: En este estado se muestra la cantidad de votantes que han votado y es cuando se espera a que se termine de votar. El modarador es quien avanza al próximo estado.
-- **ProcessingResults**: Literalmente no hace nada. El moderador tiene que avanzar al siguiente estado.
-- **Finished**: La votación ha terminado y mostrará los resultados ordenados por puntuación.
+- **Waiting**: The vote has just been created, it only shows the title and a description. Waiting for the moderator to start.
+- **Registering**: Members with the role of _voter_ can present themselves as a candidate by reacting with 📝. They can cancel if they delete the reaction. Wait for the moderator to advance status.
+- **SendingMessages**: The bot starts sending private messages to all _voters_ with an interval of 0.8 seconds. At the same time the bot will start reading private messages in case someone starts voting. It will advance to the next state automatically once messages are sent.
+- **Voting**: In this state the number of voters who have voted is shown and it is when it is waited for the voting to finish. The moderator is the one who advances to the next state.
+- **ProcessingResults**: It literally does nothing. The moderator has to advance to the next state.
+- **Finished**: The voting is over and it will show the results sorted by score.
 
 ## Roles
-El interactuará únicamente con los usuarios que tengan los roles de moderador y votante explicados más adelante.
-El ID de los roles está definido en  [`Constants.cs`](src/Constants.cs).
-Para obtener el ID de un rol en Discord hay que mencionar el rol añadiendo una barra invertida al principio, `\@rol`. Esto escribirá un mensaje que mostrará el ID del rol siguiendo el formato `<@&ROL_ID>`, de donde se puede copiar el ID del rol.
-### Moderador
-Es el encargado de manejar la votación. Puede iniciar votaciones con el comando `newpoll <título>` y avanzar los estados descritos anteriormente reaccionando con ➡️, tal y como se indica en el archivo `Constants.cs`
+He will only interact with users who have the moderator and voter roles explained below.
+The ID of the roles is defined in [`Constants.cs`](src/Constants.cs).
+To get the ID of a role in Discord, mention the role by adding a backslash at the beginning,`\@rol`. This will write a message that will display the role ID following the format `<@&ROL_ID>`, from where the role ID can be copied.
+### Moderator
+He is in charge of handling the vote. You can start voting with the command `newpoll <título>` and advance the states described above reacting with ➡️, as indicated in the file `Constants.cs`
 
-### Votante
-Los usuarios con este rol podrán votar y presentarse a candidato. Para presentarse a candidato deberá reaccionar con 📝 a la votació durante el estado _Registering_ . Podrar retractarse de su cadidatura eliminando la reacción mientras se siga en el mismo estado.
-Cuando se pasa al siguiente estado, _SendingMessages_, recibirá las instrucciones y podrá comenzar a votar.
-Tal y como se indica en dicho mensaje, el voto solo se guarda cuando se reacciona con ✅.
+### Voter
+Users with this role will be able to vote and stand for candidate. To stand as a candidate, you must react with 📝 to the vote during the _Registering_ state. You can retract your cadidatura eliminating the reaction while you are still in the same state.
+When you move to the next state, _SendingMessages_, you will receive instructions and can begin voting.
+As indicated in this message, the vote is only saved when you react with ✅.
 ![voter message](img/votacion.png)
 
 ## License
