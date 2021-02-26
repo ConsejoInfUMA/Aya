@@ -38,7 +38,7 @@
 
 ## Installation
 
-To clone and run the bot you will need [Git](https://git-scm.com) and [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/install/windows?tabs=netcore31) instalado.
+To clone and run the bot you will need [Git](https://git-scm.com) and [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/install/windows?tabs=netcore31) installed.
 
 You can do it by running the following commands in a terminal:
 ```sh
@@ -96,3 +96,5 @@ As indicated in this message, the vote is only saved when you react with ✅.
 
 ## License
 [MIT](LICENSE)
+
+[Documentation in spanish](README-ES.md)
