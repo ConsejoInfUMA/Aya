@@ -36,7 +36,7 @@
 * Multiplataforma
   - Windows, macOS y Linux.
 
-## Instalación
+## Installation
 
 Para clonar y ejecutar el bot necesitarás [Git](https://git-scm.com) y [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/install/windows?tabs=netcore31) instalado.
 
@@ -59,7 +59,7 @@ dotnet run
 
 Para generar un ejecutable recomendamos seguir [la documentación de .NET Core](https://docs.microsoft.com/es-es/dotnet/core/deploying/deploy-with-cli) donde vienen explicadas las distintas formas de hacerlo.
 
-## Configuración
+## Configuration
 En la primera ejecución se creará el archivo `config.json`, donde habrá que modificar el token del bot. 
 
 Este es el contenido por defecto:
@@ -71,7 +71,7 @@ Este es el contenido por defecto:
 ```
 Para obtener tu token deberás primero tener una aplicación de Discord, la cual se puede crear en el [portal para desarrolladores de Discord](https://discord.com/developers/). El token se encuentra en el apartado _Bot_ dentro de la configuración de la aplicación.
 
-## Estados
+## States
 La votación dispone de varios estados definidos que permiten o no la ejecución de ciertas acciones por parte de los usuarios. La mayoría de los estados pueden ser controlados por el moderador:
 
 - **Waiting**: La votación se acaba de crear, únicamente muestra el título y una descripción. A la espera del moderador para comenzar.
