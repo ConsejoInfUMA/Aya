@@ -22,7 +22,8 @@
   <a href="#configuración">Configuración</a> •
   <a href="#estados">Estados</a> •
   <a href="#roles">Roles</a> •
-  <a href="#licencia">Licencia</a>
+  <a href="#licencia">Licencia</a> •
+  <a href="#documentación">Documentación</a>
 </p>
 
 
@@ -96,3 +97,6 @@ Tal y como se indica en dicho mensaje, el voto solo se guarda cuando se reaccion
 
 ## Licencia
 [MIT](LICENSE)
+
+## Documentación
+[Versión en Inglés](README.md)
