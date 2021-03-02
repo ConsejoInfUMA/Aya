@@ -23,7 +23,9 @@
 <p>
   Después de tener el repositorio en nuestra cuenta, seleccionar la dirección del repositorio "SSH o HTTP" y copiarla en el portapapeles, para luego clonar.
 </p>
-`$ git clone https://github.com/[Usuario]/[Repositorio].git`
+```sh
+$ git clone https://github.com/[Usuario]/[Repositorio].git
+```
 <p>
   Dentro de la carpeta que genera, comprobar la URL del repositorio.
 </p>
