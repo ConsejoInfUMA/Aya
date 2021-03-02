@@ -23,15 +23,11 @@
 <p>
   Después de tener el repositorio en nuestra cuenta, seleccionar la dirección del repositorio "SSH o HTTP" y copiarla en el portapapeles, para luego clonar.
 </p>
-```
-$ git clone https://github.com/[Usuario]/[Repositorio].git
-```
+`$ git clone https://github.com/[Usuario]/[Repositorio].git`
 <p>
   Dentro de la carpeta que genera, comprobar la URL del repositorio.
 </p>
-```
-$ git remote -v
-```
+`$ git remote -v`
 <p>
   Antes de realizar modificaciones, agregar la URL del repositorio original del proyecto (del cual se realizó el fork o bifurcación)
 </p>
@@ -61,14 +57,16 @@ $ git checkout -b [Nombre-de-Rama]
 <h2 name="modificaciones">5. Modificaciones</h2>
 <p>
   Realizar todos los cambios que se desea hacer al proyecto.
-  Agregar los archivos y hacer un commit
+  Agregar los archivos y hacer un commit.
 </p>
 ```
 $ git add .
 $ git commit -m "[Mensaje-del-Commit]"
 ```
 <h2 name="push-pull">6. Subir cambios</h2>
-Después de realizar el commit hacer el push hacia nuestro repositorio indicando la rama que hemos creado.
+<p>
+  Después de realizar el commit hacer el push hacia nuestro repositorio indicando la rama que hemos creado.
+</p>
 ```
 $ git push origin [Nombre-de-Rama]
 ```
@@ -79,3 +77,4 @@ Escribir cambios del Pull Request.
 Si todo está bien, enviar con el botón "Send Pull Request".
 
 El encargado del repositorio debe aceptar sus cambios y unificar la rama que creó con la rama principal del proyecto.
+</p>
