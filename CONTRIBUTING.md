@@ -14,20 +14,20 @@
 - <a href="modificaciones">Modificaciones</a>
 - <a href="push-pull">Subir cambios</a>
 
-</hr>
+</br>
 
 <h2 name="fork">1. Fork del repositorio</h2>
 <p>El primer paso es hacer "Fork" del repositorio.</p>
 
 <h2 name="clonar">2. Clonar el repositorio</h2>
-<p>
-  Después de tener el repositorio en nuestra cuenta, seleccionar la dirección del repositorio "SSH o HTTP" y copiarla en el portapapeles, para luego clonar.
-</p>
+<p>Después de tener el repositorio en nuestra cuenta, seleccionar la dirección del repositorio "SSH o HTTP" y copiarla en el portapapeles, para luego clonar.</p>
+
 ```
 hhkjhjk
 $ git clone https://github.com/[Usuario]/[Repositorio].git
 hkjhk
 ```
+
 <p>
   Dentro de la carpeta que genera, comprobar la URL del repositorio.
 </p>
