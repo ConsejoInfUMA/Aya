@@ -23,9 +23,7 @@
 <p>Después de tener el repositorio en nuestra cuenta, seleccionar la dirección del repositorio "SSH o HTTP" y copiarla en el portapapeles, para luego clonar.</p>
 
 ```
-hhkjhjk
 $ git clone https://github.com/[Usuario]/[Repositorio].git
-hkjhk
 ```
 
 <p>
