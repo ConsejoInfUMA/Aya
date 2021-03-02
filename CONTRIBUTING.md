@@ -5,7 +5,7 @@
   Este documento describe cómo los contribuidores pueden hacer sus aportes con solicitudes de extracción a un repositorio ascendente.
 </p>
 
-<br>
+</br>
 
 - <a href="#fork">Fork del repositorio</a>
 - <a href="#clonar">Clonar el repositorio</a>
@@ -14,7 +14,7 @@
 - <a href="modificaciones">Modificaciones</a>
 - <a href="push-pull">Subir cambios</a>
 
-<br>
+</br>
 
 <h2 name="fork">1. Fork del repositorio</h2>
 <p>El primer paso es hacer "Fork" del repositorio.</p>
