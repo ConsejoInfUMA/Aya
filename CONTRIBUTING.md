@@ -9,10 +9,10 @@
 
 - <a href="#fork">Fork del repositorio</a>
 - <a href="#clonar">Clonar el repositorio</a>
-- <a href="actualizar-rama">Actualizar la rama master</a>
-- <a href="crear-rama">Crear una rama</a>
-- <a href="modificaciones">Modificaciones</a>
-- <a href="push-pull">Subir cambios</a>
+- <a href="#actualizar-rama">Actualizar la rama master</a>
+- <a href="#crear-rama">Crear una rama</a>
+- <a href="#modificaciones">Modificaciones</a>
+- <a href="#push-pull">Subir cambios</a>
 
 </br>
 
