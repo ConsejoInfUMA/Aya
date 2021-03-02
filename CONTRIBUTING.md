@@ -14,7 +14,7 @@
 - <a href="modificaciones">Modificaciones</a>
 - <a href="push-pull">Subir cambios</a>
 
-</br>
+</hr>
 
 <h2 name="fork">1. Fork del repositorio</h2>
 <p>El primer paso es hacer "Fork" del repositorio.</p>
