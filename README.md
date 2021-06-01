@@ -1,4 +1,5 @@
 
+> ## Importante ⚠️ Debido a cambios en nuestro sistema de votación dejamos de necesitar este bot y pasamos a archivarlo
 <h1 align="center">
   <br>
   <a href=""><img src="img/logo_consejo.png" alt="Consejo Informática UMA" width="200"></a>
